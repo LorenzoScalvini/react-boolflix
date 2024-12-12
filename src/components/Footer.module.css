@@ -1,5 +1,5 @@
 .footer {
-  background-color: #141414; /* Colore di sfondo nero */
+  background-color: #141414;
   color: white;
   padding: 20px 0;
   text-align: center;
@@ -20,7 +20,7 @@
 }
 
 .links a {
-  color: #e50914; /* Colore rosso di Netflix */
+  color: #e50914;
   font-size: 0.9rem;
   margin: 0 15px;
   text-decoration: none;
@@ -28,5 +28,5 @@
 }
 
 .links a:hover {
-  color: white; /* Colore bianco quando si passa sopra un link */
+  color: white;
 }
