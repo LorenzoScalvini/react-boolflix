@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Navbar.module.css";
+import userIcon from "../assets/images/userpfp.jpg";
 
 export default function Navbar() {
   return (
@@ -22,6 +23,9 @@ export default function Navbar() {
         </li>
         <li>
           <a href="#">La mia lista</a>
+        </li>
+        <li>
+          <img className={styles.icon} src={userIcon} alt="" />
         </li>
       </ul>
     </nav>

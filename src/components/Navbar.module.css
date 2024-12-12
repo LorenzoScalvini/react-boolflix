@@ -17,6 +17,7 @@
 .navLinks {
   display: flex;
   list-style-type: none;
+  align-items: center;
   margin: 0;
   padding: 0;
 }
@@ -34,4 +35,9 @@
 
 .navLinks a:hover {
   color: #e50914;
+}
+
+.icon {
+  max-width: 30px;
+  border-radius: 999px;
 }
