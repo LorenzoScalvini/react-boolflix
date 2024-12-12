@@ -1,0 +1,32 @@
+.footer {
+  background-color: #141414; /* Colore di sfondo nero */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.links {
+  margin-top: 10px;
+}
+
+.links a {
+  color: #e50914; /* Colore rosso di Netflix */
+  font-size: 0.9rem;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: white; /* Colore bianco quando si passa sopra un link */
+}
