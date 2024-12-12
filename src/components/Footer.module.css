@@ -3,6 +3,9 @@
   color: white;
   padding: 20px 0;
   text-align: center;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
 }
 
 .footerContent {

@@ -5,6 +5,9 @@
   padding: 10px 20px;
   background-color: #141414;
   border-radius: 5px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .logo a {
@@ -20,6 +23,7 @@
   align-items: center;
   margin: 0;
   padding: 0;
+  margin-right: 3rem;
 }
 
 .navLinks li {

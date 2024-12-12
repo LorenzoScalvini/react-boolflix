@@ -21,9 +21,9 @@ export default function App() {
 
   return (
     <>
+      <Navbar />
       <div className={styles.container}>
         <header>
-          <Navbar />
           <Hero />
           <SearchBar onSearch={handleSearch} />
         </header>
