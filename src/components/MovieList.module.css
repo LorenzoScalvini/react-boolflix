@@ -1,0 +1,41 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #000000;
+}
+
+.movieCard {
+  background-color: #424242;
+  border-radius: 10px;
+  padding: 15px;
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.movieCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.movieImage {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  color: #e50914;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #ffffff;
+  margin: 5px 0;
+}
