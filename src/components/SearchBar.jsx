@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./SearchBar.module.css";
 
 export default function SearchBar({ onSearch }) {
   const [query, setQuery] = useState("");
@@ -8,14 +9,17 @@ export default function SearchBar({ onSearch }) {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <input
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Che film vuoi cercare?"
+        className={styles.input}
       />
-      <button onClick={handleSearch}>Cerca</button>
+      <button onClick={handleSearch} className={styles.button}>
+        Cerca
+      </button>
     </div>
   );
 }
