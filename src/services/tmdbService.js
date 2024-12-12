@@ -21,3 +21,19 @@ export const searchMovies = (query) => {
       return [];
     });
 };
+
+export const searchTvShows = async (query) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/search/tv`, {
+      params: {
+        api_key: API_KEY,
+        query: query,
+        language: "it-IT",
+      },
+    });
+    return response.data.results;
+  } catch (error) {
+    console.error("Errore ricerca serie TV:", error);
+    return [];
+  }
+};

@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import SearchBar from "./components/SearchBar";
+import { searchMovies, searchTvShows } from "./services/tmdbService";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [results, setResults] = useState([]);
+
+  const handleSearch = async (query) => {
+    const movies = await searchMovies(query);
+    const tvShows = await searchTvShows(query);
+    setResults([...movies, ...tvShows]);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <header>
+        <h1>Boolflix</h1>
+        <SearchBar onSearch={handleSearch} />
+      </header>
+      <div className="results-grid">
+        {results.map((item) => (
+          <div
+            key={item.id}
+            className="media-card"
+            style={{
+              backgroundImage: `url(https://image.tmdb.org/t/p/w342${item.poster_path})`,
+            }}
+          >
+            <div className="hover-details">
+              <h3>{item.title || item.name}</h3>
+              <p>{item.overview}</p>
+            </div>
+          </div>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
