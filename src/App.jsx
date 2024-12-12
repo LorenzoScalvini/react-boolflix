@@ -3,6 +3,7 @@ import SearchBar from "./components/SearchBar";
 import Card from "./components/Card";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Hero from "./components/Hero";
 import { searchMovies, searchTvShows } from "./services/tmdbService";
 import styles from "./App.module.css";
 
@@ -23,6 +24,7 @@ export default function App() {
       <div className={styles.container}>
         <header>
           <Navbar />
+          <Hero />
           <SearchBar onSearch={handleSearch} />
         </header>
         <div className={styles["results-grid"]}>
