@@ -6,14 +6,22 @@
   height: 300px;
   margin: 2rem;
   border-radius: 5px;
+  margin-top: 4rem;
 }
 
 .heroTitle {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #ffffff;
   text-align: center;
   margin-bottom: 1rem;
   font-weight: bold;
+}
+
+.heroDescription {
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .heroButton {
@@ -29,9 +37,8 @@
 
 .heroButton:hover {
   background-color: #f40612;
-}
-
-.heroButton:focus {
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-5px);
   outline: none;
   box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.5);
 }

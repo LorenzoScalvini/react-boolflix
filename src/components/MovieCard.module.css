@@ -1,0 +1,51 @@
+.card {
+  background-color: #0f0f0f;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: auto;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  padding: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.cardImage {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  border-bottom: 4px solid #e50914;
+  border-radius: 3px;
+}
+
+.cardContent h3 {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.cardContent p {
+  font-size: 0.9rem;
+  color: #ffffff;
+  height: 50px;
+  padding: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+
+.rating {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #e50914;
+}
+
+.language {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555;
+}

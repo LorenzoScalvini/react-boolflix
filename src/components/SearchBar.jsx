@@ -4,9 +4,9 @@ import styles from "./SearchBar.module.css";
 export default function SearchBar({ onSearch }) {
   const [query, setQuery] = useState("");
 
-  const handleSearch = () => {
+  function handleSearch() {
     onSearch(query);
-  };
+  }
 
   return (
     <div className={styles.container}>
@@ -14,11 +14,11 @@ export default function SearchBar({ onSearch }) {
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="Che film vuoi cercare?"
+        placeholder="Search for a movie"
         className={styles.input}
       />
       <button onClick={handleSearch} className={styles.button}>
-        Cerca
+        Search
       </button>
     </div>
   );

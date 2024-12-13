@@ -1,11 +1,23 @@
-// pages/Movies.js
-import React from "react";
+import React, { useEffect, useContext } from "react";
+import { MovieContext } from "../context/MovieProvider";
+import MovieCard from "../components/MovieCard";
+import SearchBar from "../components/SearchBar";
+import styles from "./Movies.module.css";
 
 const Movies = () => {
+  const { movies, searchMovies } = useContext(MovieContext);
+
   return (
-    <div>
-      <h1>Movies page</h1>
-      {/* Add your movies page content here */}
+    <div className={styles.container}>
+      <h1>Popular Movies</h1>
+      <SearchBar onSearch={searchMovies} />
+      <div className={styles.movieList}>
+        {movies.length === 0 ? (
+          <p className={styles.noResults}>Nessun film trovato...</p>
+        ) : (
+          movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)
+        )}
+      </div>
     </div>
   );
 };

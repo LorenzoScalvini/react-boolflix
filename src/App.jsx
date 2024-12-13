@@ -1,45 +1,31 @@
-import React, { useState } from "react";
-import SearchBar from "./components/SearchBar";
-import Card from "./components/Card";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { MovieProvider } from "./context/MovieProvider";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import { searchMovies, searchTvShows } from "./services/tmdbService";
+import Home from "./pages/Home";
+import Movies from "./pages/Movies";
 import styles from "./App.module.css";
+import Footer from "./components/Footer";
+import Assistenza from "./pages/Assistenza";
+import Login from "./pages/Login";
 
-export default function App() {
-  const [results, setResults] = useState([]);
-
-  const handleSearch = async (query) => {
-    const movies = await searchMovies(query);
-    const tvShows = await searchTvShows(query);
-    const filteredResults = [...movies, ...tvShows].filter(
-      (item) => item.poster_path
-    );
-    setResults(filteredResults);
-  };
-
+const App = () => {
   return (
     <>
-      <Navbar />
-      <div className={styles.container}>
-        <header>
-          <Hero />
-          <SearchBar onSearch={handleSearch} />
-        </header>
-        <div className={styles["results-grid"]}>
-          {results.map((item) => (
-            <Card
-              key={item.id}
-              title={item.title || item.name}
-              overview={item.overview}
-              posterPath={item.poster_path}
-              voteAverage={item.vote_average}
-            />
-          ))}
-        </div>
-      </div>
-      <Footer />
+      <MovieProvider>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />{" "}
+            <Route path="/movies" element={<Movies />} />{" "}
+            <Route path="/assistenza" element={<Assistenza />} />{" "}
+            <Route path="/login" element={<Login />} />{" "}
+          </Routes>
+          <Footer />
+        </Router>
+      </MovieProvider>
     </>
   );
-}
+};
+
+export default App;
