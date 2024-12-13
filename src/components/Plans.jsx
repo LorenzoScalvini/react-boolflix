@@ -5,21 +5,21 @@ const Plans = () => {
   const plans = [
     {
       name: "Basic",
-      description: "Access to all content in SD quality",
+      description: "Accesso a tutti i contenuti in qualità SD",
       price: "€7.99/month",
-      extra: "Only 1 screen at a time",
+      extra: "Solo uno schermo contemporaneamente",
     },
     {
       name: "Standard",
-      description: "Access to all content in HD quality",
+      description: "Accedi a tutti i contenuti in qualità HD",
       price: "€11.99/month",
-      extra: "Watch on 2 screens at a time",
+      extra: "Guarda su 2 schermi contemporaneamente",
     },
     {
       name: "Premium",
-      description: "Access to all content in 4K UHD quality",
+      description: "Accedi a tutti i contenuti in qualità4K",
       price: "€15.99/month",
-      extra: "Watch on 4 screens at a time",
+      extra: "Guarda su 4 schermi contemporaneamente",
     },
   ];
 
@@ -31,8 +31,7 @@ const Plans = () => {
           <p>{plan.description}</p>
           <span>{plan.price}</span>
           <p className={styles.extra}>{plan.extra}</p>{" "}
-          {/* Descrizione aggiuntiva */}
-          <button>Choose Plan</button>
+          <button>Fai l'upgrade</button>
         </div>
       ))}
     </div>

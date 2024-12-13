@@ -21,6 +21,7 @@
   height: auto;
   border-bottom: 4px solid #e50914;
   border-radius: 3px;
+  z-index: -2;
 }
 
 .cardContent h3 {

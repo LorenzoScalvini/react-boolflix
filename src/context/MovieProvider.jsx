@@ -10,13 +10,13 @@ export const MovieProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const fetchMoviesAndTvShows = () => {
-    // Fetch popular movies
+    // Fetching dei film popolari
     axios
       .get(`${BASE_URL}/movie/popular?api_key=${API_KEY}`)
       .then((response) => setMovies(response.data.results))
       .catch((error) => console.error("Error fetching movies:", error));
 
-    // Fetch popular TV shows
+    // Fetching dei TvShows popolari
     axios
       .get(`${BASE_URL}/tv/popular?api_key=${API_KEY}`)
       .then((response) => setTvShows(response.data.results))
@@ -25,13 +25,13 @@ export const MovieProvider = ({ children }) => {
 
   const searchMoviesAndTvShows = (query) => {
     setSearchQuery(query);
-    // Search movies
+    // Search per i film
     axios
       .get(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`)
       .then((response) => setMovies(response.data.results))
       .catch((error) => console.error("Error searching movies:", error));
 
-    // Search TV shows
+    // Search pe i tv shows
     axios
       .get(`${BASE_URL}/search/tv?api_key=${API_KEY}&query=${query}`)
       .then((response) => setTvShows(response.data.results))
