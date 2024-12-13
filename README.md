@@ -18,7 +18,6 @@ La ricerca di film e serie TV sarà gestita utilizzando due endpoint separati de
 
 #### Per i **Film**, la risposta JSON contiene:
 
-- **`release_date`**: La data di rilascio del film.
 - **`original_language`**: La lingua originale del film.
 - **`title`**: Il titolo del film.
 - **`original_title`**: Il titolo originale del film.
@@ -26,17 +25,7 @@ La ricerca di film e serie TV sarà gestita utilizzando due endpoint separati de
 
 #### Per le **Serie TV**, la risposta JSON contiene:
 
-- **`first_air_date`**: La data di debutto della serie TV.
 - **`original_language`**: La lingua originale della serie TV.
 - **`name`**: Il nome della serie TV.
 - **`original_name`**: Il nome originale della serie TV.
 - **`vote_average`**: La valutazione media della serie TV.
-
-## 3. Gestione delle Differenze
-
-Nel progetto **BoolFlix**, quando un utente cerca un film o una serie TV, il codice deve essere in grado di distinguere tra i due tipi di contenuti e gestire correttamente le informazioni restituite dall'API:
-
-- **Per i Film**, estrarre e visualizzare il titolo, la lingua e la data di rilascio.
-- **Per le Serie TV**, estrarre e visualizzare il titolo, la lingua e la data di debutto.
-
-In entrambi i casi, visualizzare la valutazione media (`vote_average`) e altre informazioni utili.
